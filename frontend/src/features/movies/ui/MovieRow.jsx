@@ -51,7 +51,7 @@ const MovieRow = ({ title, movies, loading }) => {
                   <div key={i} className="flex-shrink-0 w-48 md:w-56 aspect-[2/3] animate-pulse bg-white/5 rounded-2xl border border-white/10" />
               ))
           ) : (
-              movies && movies.map((movie) => (
+              movies && movies.filter(m => m && m.id).map((movie) => (
                   <div key={movie.id} className="snap-start first:pl-2">
                       <MovieCard movie={movie} />
                   </div>
